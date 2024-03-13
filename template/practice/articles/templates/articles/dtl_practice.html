@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block navi %}
+<h1>점심메뉴목록</h1>
+<ul>
+  {% for menu in lunch %}
+  {% if menu == '밥' %}
+    <li>김치볶음밥</li>
+  {% else %}
+    <li>{{ menu }}</li>
+  {% endif %}
+  
+  {% endfor %}
+  {% for item in empty %}
+    <li>{{ item }}</li>
+  {%empty%}
+  <li>아직 아무것도 안들어옴</li>
+  {% endfor %}
+</ul>
+{% now "Y-m-d H:i" %}
+{% endblock navi %}
